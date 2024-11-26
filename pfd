@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Soma Shirai <shiso461@gmail.com>
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+
+
+def prime_factor(n):
+    factor = []
+
+    i=2
+    while i <= n:
+        if n % i == 0:
+            factor.append(i)
+            n //= i
+        else:
+            i += 1
+
+    return factor
+
+for line in sys.stdin:
+    line = line.rstrip()
+    try:
+        number = int(line)
+        if number > 1:
+            factor = prime_factor(number)
+            print(f"{number}: {' * '.join(map(str, factor))}")
+        else:
+            print(f"{line} は素因数分解できません。")
+    except ValueError:
+        print(f"{line} は無効な入力です。")
