@@ -37,22 +37,22 @@ expected="100: 2 * 2 * 5 * 5"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 # 1が入力された場合
-out=$(echo "1" | ./test)
+out=$(echo "1" | ./prime_f)
 expected="1 は素因数分解できません。"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 # マイナスの数値が入力された場合
-out=$(echo "-10" | ./test)
+out=$(echo "-10" | ./prime_f)
 expected="-10は無効な入力です。"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 # 少数が入力された場合
-out=$(echo "1.5" | ./test)
+out=$(echo "1.5" | ./prime_f)
 expected="1.5は無効な入力です。"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 # 数値以外が入力された場合
-out=$(echo "abc" | ./test)
+out=$(echo "abc" | ./prime_f)
 expected="abc は無効な入力です。"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
