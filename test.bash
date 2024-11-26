@@ -16,7 +16,7 @@ out=$(seq 5 | ./plus)
 [ "${out}" = 15 ] || ng "$LINENO"
 
 ### STRANGE INPUT ###
-out=$(seq あ | ./plus)
+out=$(echo あ | ./plus)
 [ "$?" = 1 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
@@ -28,33 +28,29 @@ out=$(echo | ./plus)
 ### prime_fコマンドへのテスト###
 # 10の素因数分解
 out=$(echo "10" | ./prime_f)
-expected="10: 2 * 5"
-[ "${out}" = "${expected}" ] || ng "$LINENO"
+[ "${out}" = "10: 2 * 5" ] || ng "$LINENO"
 
 # 100の素因数分解
 out=$(echo "100" | ./prime_f)
-expected="100: 2 * 2 * 5 * 5"
-[ "${out}" = "${expected}" ] || ng "$LINENO"
+[ "${out}" = "100: 2 * 2 * 5 * 5" ] || ng "$LINENO"
 
 # 1が入力された場合
 out=$(echo "1" | ./prime_f)
-expected="1 は素因数分解できません。"
-[ "${out}" = "${expected}" ] || ng "$LINENO"
+[ "${out}" = "1 は素因数分解できません。" ] || ng "$LINENO"
 
 # マイナスの数値が入力された場合
 out=$(echo "-10" | ./prime_f)
-expected="-10は無効な入力です。"
-[ "${out}" = "${expected}" ] || ng "$LINENO"
+[ "${out}" = "-10 は素因数分解できません。" ] || ng "$LINENO"
 
 # 少数が入力された場合
 out=$(echo "1.5" | ./prime_f)
-expected="1.5は無効な入力です。"
-[ "${out}" = "${expected}" ] || ng "$LINENO"
+[ "$?" = 1 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
 
 # 数値以外が入力された場合
 out=$(echo "abc" | ./prime_f)
-expected="abc は無効な入力です。"
-[ "${out}" = "${expected}" ] || ng "$LINENO"
+[ "$?" = 1 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
 
 
 [ "$res" = 0 ] && echo ok

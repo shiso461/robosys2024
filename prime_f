@@ -20,12 +20,9 @@ def prime_factor(n):
 
 for line in sys.stdin:
     line = line.rstrip()
-    try:
-        number = int(line)
-        if number > 1:
-            factor = prime_factor(number)
-            print(f"{number}: {' * '.join(map(str, factor))}")
-        else:
-            print(f"{line} は素因数分解できません。")
-    except ValueError:
-        print(f"{line} は無効な入力です。")
+    number = int(line)
+    if number > 1:
+        factor = prime_factor(number)
+        print(f"{number}: {' * '.join(map(str, factor))}")
+    else:
+        print(f"{line} は素因数分解できません。")
