@@ -1,4 +1,4 @@
-# 素因数分解
+# 素因数分解(Prime Factorization)
 [![test](https://github.com/shiso461/robosys2024/actions/workflows/test.yml/badge.svg)](https://github.com/shiso461/robosys2024/actions/workflows/test.yml)
 
 ## 概要
