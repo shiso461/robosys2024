@@ -11,7 +11,7 @@
  ターミナルで以下のコマンドを入力し，クローンして下さい．
 
  ```
- git clone https://github.com/shiso461/robosys2024
+ git clone https://github.com/shiso461/robosys2024.git
  cd robosys2024
  ```
 
