@@ -1,6 +1,5 @@
 # 素因数分解(Prime Factorization)
-[![test](https://github.com/shiso461/robosys2024/actions/workflows/test.yml/badge.svg)](https://github.com/shiso461/robosys2024/actions/workflows/test.yml)
-
+[![test](https://github.com/shiso461/robosys2024/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/shiso461/robosys2024/actions/workflows/test.yml)
 ## 概要
 
 - ターミナル上で素因数分解をするコマンドです．
