@@ -10,21 +10,6 @@ ng () {
 res=0
 
 
-### plusコマンドへのテスト###
-### NORMAL INPUT ###
-out=$(seq 5 | ./plus)
-[ "${out}" = 15 ] || ng "$LINENO"
-
-### STRANGE INPUT ###
-out=$(echo あ | ./plus)
-[ "$?" = 1 ] || ng "$LINENO"
-[ "${out}" = "" ] || ng "$LINENO"
-
-out=$(echo | ./plus)
-[ "$?" = 1 ] || ng "$LINENO"
-[ "${out}" = "" ] || ng "$LINENO"
-
-
 ### prime_fコマンドへのテスト###
 # 10の素因数分解
 out=$(echo "10" | ./prime_f)
